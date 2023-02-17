@@ -1,0 +1,76 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+#countries {
+  width: 98%;
+  background-color: #f7f3f3;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  justify-content: space-evenly;
+  gap: 10px;
+  display: flex;
+}
+
+li {
+  border-radius: 4px;
+  margin-top: 40px;
+  list-style: none;
+}
+
+#listContainer {
+  height: 45px;
+  width: 500px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: .7em;
+  display: flex;
+}
+
+#textContainer {
+  flex-direction: column;
+  display: flex;
+}
+
+#countryName {
+  margin: 14px 0;
+  padding: 0;
+  font-size: 1.5em;
+  line-height: 0;
+}
+
+#worldRegion {
+  margin: 2px 0;
+  padding: 5px 0;
+  line-height: .04em;
+}
+
+#countryPopulation {
+  margin: 0;
+  padding: 0;
+  font-size: .8em;
+}
+
+#worldMap {
+  width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#flagCountry {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border: 1px solid #d3d3d3;
+  padding: 2px;
+}
+
+/*# sourceMappingURL=index.4d663569.css.map */

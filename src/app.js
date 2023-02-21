@@ -62,24 +62,3 @@ async function fetchData(){
 
 fetchData();
 
-//     let colorCountry = 'Africa';
-// switch (colorCountry) {
-//     case 'Africa':
-//         console.log('blue');
-//         break;
-//     case 'Americas':
-//         console.log('green');
-//         break;
-//     case 'Asia':
-//         console.log('red')
-//         break;
-//     case 'Europe':
-//         console.log('yellow')
-//         break;
-//     case 'Oceania':
-//         console.log('purple')
-//         break;
-//     default:
-//         console.log('Unknown country region')
-//         break;
-// }

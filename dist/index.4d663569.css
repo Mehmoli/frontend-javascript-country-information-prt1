@@ -1,7 +1,12 @@
+@import "https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@400;700&display=swap";
 html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: Gochi Hand, cursive;
 }
 
 h1 {
@@ -15,6 +20,7 @@ h1 {
   flex-grow: 0;
   justify-content: space-evenly;
   gap: 10px;
+  font-family: Montserrat, sans-serif;
   display: flex;
 }
 

@@ -6,13 +6,13 @@ html {
     margin: 0;
 }
 body {
-    font-family: 'Gochi Hand', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 h1 {
     text-align: center;
+    font-family:'Gochi Hand', cursive;
 }
 #countries {
-    font-family: 'Montserrat', sans-serif;
     width: 98%;
     display: flex;
     flex-wrap: wrap;
@@ -20,41 +20,47 @@ h1 {
     gap: 10px;
     flex-grow: 0;
     background-color: #f7f3f3;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
 }
 
 li {
-    margin-top: 40px;
     border-radius:4px ;
     list-style: none;
 }
 #listContainer {
     height: 45px;
-    width: 500px;
+    width: 520px;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    font-size: 0.7em;
+    align-items: flex-start;
+    margin-top: 10px;
 }
 #textContainer {
     display: flex;
     flex-direction: column;
-
+    height: 40px;
+    margin: 10px 2px;
+    padding: 0 2px;
 }
 #countryName {
-    font-size: 1.5em;
     padding: 0;
-    margin: 14px 0px;
-    line-height: 0;
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+    overflow: hidden;
 }
 #worldRegion {
+    font-size: 0.7em;
     padding: 5px 0;
     margin: 2px 0;
     line-height: 0.04em;
 }
 #countryPopulation {
     padding: 0;
-    margin: 0;
-    font-size: 0.8em;
+    margin: 5px 2px;
+    font-size: 0.6em;
 }
 #worldMap {
     display: block;
@@ -63,10 +69,14 @@ li {
     margin-left: auto;
     margin-right: auto;
 }
+#flag {
+    margin: 3px 0;
+    padding: 0;
+}
 #flagCountry {
-     width: 60px;
-     height: 40px;
-     object-fit: cover;
-     padding: 2px;
-     border: 1px solid lightgray;
- }
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    padding: 2px;
+    border: 1px solid lightgray;
+}

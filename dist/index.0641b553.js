@@ -560,84 +560,42 @@ function hmrAccept(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-let myList = [];
 async function fetchData() {
     try {
         const result = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all");
-        console.log(result.data);
-        myList = result.data;
+        const myList = result.data;
         myList.sort((a, b)=>{
             return a.population - b.population;
         });
-        for(let i = 0; i < myList.length; i++){
-            // console.log(myList[i].name);
-            // console.log(myList[i].region);
-            // console.log(myList[i].population);
-            // console.log(myList[i].region);
-            let ul = document.getElementById("countries");
-            let li = document.createElement("li");
-            li.innerHTML = `<div id="listContainer">
-            <span id="flag"><img id="flagCountry" src="${myList[i].flag}" alt="flag country"/></span>
+        const ul = document.getElementById("countries");
+        const listOfWorldCountries = myList.map((listOfWorldCountry)=>{
+            return `<li><div id="listContainer">
+            <span id="flag"><img id="flagCountry" src="${listOfWorldCountry.flag}" alt="flag country"/></span>
             <div id="textContainer">
-            <p id="countryName">${myList[i].name}</p>
-            <p id="worldRegion">${myList[i].region}</p>
+            <p id="countryName" class="${listOfWorldCountry.region}">${listOfWorldCountry.name}</p>
+            <p id="worldRegion">${listOfWorldCountry.region}</p>
             </div>
             </div>
-            <p id="countryPopulation">Has a population of ${myList[i].population} people</p>
+            <p id="countryPopulation">Has a population of ${listOfWorldCountry.population} people</p>
+            </li>
             `;
-            ul.appendChild(li);
-            const colorNameCountry = document.getElementById("countryName");
-            let colorCountry = myList[i].region;
-            function colorNames() {
-                switch(colorCountry){
-                    case "Africa":
-                        colorNameCountry.style.color = "blue";
-                        break;
-                    case "Americas":
-                        console.log("green");
-                        break;
-                    case "Asia":
-                        console.log("red");
-                        break;
-                    case "Europe":
-                        console.log("yellow");
-                        break;
-                    case "Oceania":
-                        console.log("purple");
-                        break;
-                    default:
-                        console.log("Unknown country region");
-                        break;
-                }
-            }
-            colorNames(colorCountry);
-            colorNameCountry.style.color = "${colorNames}";
-        }
+        });
+        ul.innerHTML = listOfWorldCountries.join("");
+        const asiaColor = document.getElementsByClassName("Asia");
+        const africaColor = document.getElementsByClassName("Africa");
+        const americasColor = document.getElementsByClassName("Americas");
+        const europeColor = document.getElementsByClassName("Europe");
+        const oceaniaColor = document.getElementsByClassName("Oceania");
+        for(let i = 0; i < asiaColor.length; i++)asiaColor[i].style.color = "red";
+        for(let i = 0; i < africaColor.length; i++)africaColor[i].style.color = "blue";
+        for(let i = 0; i < americasColor.length; i++)americasColor[i].style.color = "green";
+        for(let i = 0; i < europeColor.length; i++)europeColor[i].style.color = "#F9DB24";
+        for(let i = 0; i < oceaniaColor.length; i++)oceaniaColor[i].style.color = "purple";
     } catch (e) {
-        console.error(e);
+        console.error("OOPS!!!!!");
     }
 }
-fetchData(); //     let colorCountry = 'Africa';
- // switch (colorCountry) {
- //     case 'Africa':
- //         console.log('blue');
- //         break;
- //     case 'Americas':
- //         console.log('green');
- //         break;
- //     case 'Asia':
- //         console.log('red')
- //         break;
- //     case 'Europe':
- //         console.log('yellow')
- //         break;
- //     case 'Oceania':
- //         console.log('purple')
- //         break;
- //     default:
- //         console.log('Unknown country region')
- //         break;
- // }
+fetchData();
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

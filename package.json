@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@parcel/transformer-css": "^2.8.3",
     "axios": "^1.3.3"
   },
   "devDependencies": {

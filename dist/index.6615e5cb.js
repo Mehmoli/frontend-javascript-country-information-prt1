@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"lKzq4":[function(require,module,exports) {
+})({"cEwfi":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "fe4256060641b553";
+module.bundle.HMR_BUNDLE_ID = "292c46426615e5cb";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -556,79 +556,44 @@ function hmrAccept(bundle, id) {
     });
 }
 
-},{}],"bNKaB":[function(require,module,exports) {
+},{}],"8gVq6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-// async function fetchData() {
-//     try {
-//         const result = await axios.get('https://restcountries.com/v2/all');
-//
-//         const myList = result.data;
-//
-//         myList.sort((a, b) => {
-//             return a.population - b.population;
-//         });
-//
-//         const ul = document.getElementById('countries');
-//
-//         const listOfWorldCountries = myList.map((listOfWorldCountry) => {
-//             return  `<li><div id="listContainer">
-//             <span id="flag"><img id="flagCountry" src="${listOfWorldCountry.flag}" alt="flag country"/></span>
-//             <div id="textContainer">
-//             <p id="countryName" class="${listOfWorldCountry.region}">${listOfWorldCountry.name}</p>
-//             <p id="worldRegion">${listOfWorldCountry.region}</p>
-//             </div>
-//             </div>
-//             <p id="countryPopulation">Has a population of ${listOfWorldCountry.population} people</p>
-//             </li>
-//             `});
-//
-//         ul.innerHTML = listOfWorldCountries.join('');
-//
-//         const asiaColor = document.getElementsByClassName("Asia");
-//         const africaColor = document.getElementsByClassName("Africa");
-//         const americasColor = document.getElementsByClassName("Americas");
-//         const europeColor = document.getElementsByClassName("Europe");
-//         const oceaniaColor = document.getElementsByClassName("Oceania");
-//
-//
-//                 for (let i = 0; i < asiaColor.length; i++) {
-//                 asiaColor[i].style.color = 'red';
-//                  }
-//                 for (let i = 0; i < africaColor.length; i++) {
-//                     africaColor[i].style.color = 'blue';
-//                 }
-//                 for (let i = 0; i < americasColor.length; i++) {
-//                     americasColor[i].style.color = 'green';
-//                 }
-//                 for (let i = 0; i < europeColor.length; i++) {
-//                     europeColor[i].style.color = '#F9DB24';
-//                 }
-//                 for (let i = 0; i < oceaniaColor.length; i++) {
-//                     oceaniaColor[i].style.color = 'purple';
-//                 }
-//
-//     } catch (e) {
-//         console.error('OOPS!!!!!')
-//
-//     }
-// }
-//
-// fetchData();
-const userInput = document.getElementById("user-input");
-console.log(userInput.value);
 async function fetchData() {
     try {
-        const result = await (0, _axiosDefault.default).get("https://restcountries.com/v2/name/netherlands");
+        const result = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all");
         const myList = result.data[0];
         console.log(myList);
-        console.log(myList.name);
-        const section = document.getElementById("country-card");
-        section.innerHTML = `<p>${myList.currencies[0].name}</p>
-                             <p>${myList.capital}</p>`;
+        myList.sort((a, b)=>{
+            return a.population - b.population;
+        });
+        const ul = document.getElementById("countries");
+        const listOfWorldCountries = myList.map((listOfWorldCountry)=>{
+            return `<li><div id="listContainer">
+            <span id="flag"><img id="flagCountry" src="${listOfWorldCountry.flag}" alt="flag country"/></span>
+            <div id="textContainer">
+            </div>
+            <p id="countryName" class="${listOfWorldCountry.region}">${listOfWorldCountry.name}</p>
+            </div>
+            <p id="worldRegion">${listOfWorldCountry.region}</p>
+            <p id="countryPopulation">the population is ${listOfWorldCountry.region}</p>
+            </li>
+            `;
+        });
+        ul.innerHTML = listOfWorldCountries.join("");
+        const asiaColor = document.getElementsByClassName("Asia");
+        const africaColor = document.getElementsByClassName("Africa");
+        const americasColor = document.getElementsByClassName("Americas");
+        const europeColor = document.getElementsByClassName("Europe");
+        const oceaniaColor = document.getElementsByClassName("Oceania");
+        for(let i = 0; i < asiaColor.length; i++)asiaColor[i].style.color = "red";
+        for(let i = 0; i < africaColor.length; i++)africaColor[i].style.color = "blue";
+        for(let i = 0; i < americasColor.length; i++)americasColor[i].style.color = "green";
+        for(let i = 0; i < europeColor.length; i++)europeColor[i].style.color = "#F9DB24";
+        for(let i = 0; i < oceaniaColor.length; i++)oceaniaColor[i].style.color = "purple";
     } catch (e) {
-        console.log(e);
+        console.error("OOPS!!!!!");
     }
 }
 fetchData();
@@ -4773,6 +4738,6 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
 });
 exports.default = HttpStatusCode;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["lKzq4","bNKaB"], "bNKaB", "parcelRequirecb08")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["cEwfi","8gVq6"], "8gVq6", "parcelRequirecb08")
 
-//# sourceMappingURL=index.0641b553.js.map
+//# sourceMappingURL=index.6615e5cb.js.map

@@ -84,25 +84,11 @@ li {
 }
 
 #worldMap {
-  width: 40%;
+  width: 42vw;
   height: auto;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-#search-form {
-  width: 100%;
-  text-align: center;
-}
-
-#country-card {
-  width: 400px;
-  height: 150px;
-  border: 2px solid gray;
-  border-radius: 5px;
-  margin: 10px auto;
-  padding: 8px;
-}
-
-/*# sourceMappingURL=index.4d663569.css.map */
+/*# sourceMappingURL=index.6bc44b11.css.map */

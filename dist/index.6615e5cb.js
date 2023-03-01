@@ -581,7 +581,7 @@ async function getData(searchName) {
     try {
         //MAAK EEN VARIABELE RESULT VOOR HET OPSLAAN VAN OPGEHAALDE DATA
         const result = await (0, _axiosDefault.default).get(`https://restcountries.com/v2/name/${searchName}`);
-        // console.log(result.data);
+        console.log(result.data);
         searchResult = result.data[0];
         //MAAK EEN VARIABELE VOOR COUNTRYCARD EN HAAL DE GEGEVENS OP
         const countryCard = document.getElementById("country-card");
@@ -589,9 +589,11 @@ async function getData(searchName) {
         countryCard.innerHTML = `<img id="flagCountry" src="${searchResult.flag}" alt="flag country"/><span id="nameCountry"><h2>${searchResult.name}</h2></span>
                              <hr>
                              <p>${searchResult.name} is situated in ${searchResult.subregion}. It has a population of ${searchResult.population} people.</p>
-                             <p>The capital is ${searchResult.capital} ${currencyChecker(searchResult.currencies)}'s</p>
-                             <p>They speak ${searchResult.languages[0].name}</p>  
+                             <p>The capital is ${searchResult.capital} ${currencyChecker(searchResult.currencies)}</p>
+                             <p>They speak ${languageChecker(searchResult.languages)}</p>  
                              `;
+        const removeCountries = document.getElementById("countries");
+        removeCountries.remove();
     } catch (e) {
         //ALS SEARCHRESULT GEEN GELDIGE WARDE HEEFT
         if (!searchResult) {
@@ -607,7 +609,14 @@ async function getData(searchName) {
 function currencyChecker(currencies) {
     let output = " and you can pay with ";
     if (currencies.length === 2) return output + `${currencies[0].name} and ${currencies[1].name}'s`;
-    else return output + `${currencies[0].name}`;
+    else return output + `${currencies[0].name}'s`;
+}
+//MAAK EEN FUNCTIE DIE CHECKT OF ER IN EEN LAND VERSCHILLENDE TALEN WORDEN GEBRUIKT
+function languageChecker(languages) {
+    let speakLanguages = `They speak `;
+    if (languages.length === 3) return speakLanguages + `${languages[0].name}, ${languages[1].name} and ${languages[2].name}.`;
+    else if (languages.length === 2) return speakLanguages + `${languages[0].name} and ${languages[1].name}.`;
+    return speakLanguages + `${languages[0].name}.`;
 }
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["cEwfi","8gVq6"], "8gVq6", "parcelRequirecb08")

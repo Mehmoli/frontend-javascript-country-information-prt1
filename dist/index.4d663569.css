@@ -117,11 +117,11 @@ li {
 #nameCountry {
   margin: 0;
   font-family: Gochi Hand, cursive;
-  font-size: 2em;
+  font-size: 1.4em;
   display: inline-block;
   position: absolute;
-  top: -35px;
-  left: 110px;
+  top: -10px;
+  left: 100px;
 }
 
 hr {

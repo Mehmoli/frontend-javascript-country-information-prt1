@@ -70,6 +70,14 @@ li {
   font-size: .6em;
 }
 
+#worldMap {
+  width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 #flag {
   margin: 3px 0;
   padding: 0;
@@ -83,7 +91,7 @@ li {
   padding: 2px;
 }
 
-#worldMap {
+#turningGlobe {
   width: 40%;
   height: auto;
   margin-left: auto;
@@ -97,12 +105,35 @@ li {
 }
 
 #country-card {
-  width: 400px;
-  height: 150px;
-  border: 2px solid gray;
+  width: 45vw;
+  height: 250px;
+  border: 1px solid #c8c2c2;
   border-radius: 5px;
-  margin: 10px auto;
-  padding: 8px;
+  margin: 20px auto;
+  padding: 25px;
+  position: relative;
+}
+
+#nameCountry {
+  margin: 0;
+  font-family: Gochi Hand, cursive;
+  font-size: 2em;
+  display: inline-block;
+  position: absolute;
+  top: -35px;
+  left: 110px;
+}
+
+hr {
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid #eadcd2;
+  margin: -15px auto 10px;
+}
+
+.errorMessage {
+  color: red;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */
